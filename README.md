@@ -7,7 +7,7 @@ web automation element spy tool dev as chrome plug.
 
 WAS
 ===
-一款基于chrome插件形势开发的web自动化网页元素识别工具。
+一款以chrome插件形式开发的web自动化网页元素识别工具。
 
 功能
 ====
