@@ -1,0 +1,50 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+<script>
+var nw;
+var injectHtml = '<hr><div><p>inject success</p>\
+					<div>iframe test<input type="button" value="test parent DOM" onclick="parent.document.getElementById(\'showtext\').innerHTML=\'parent element changed!\'" >\
+					<input type="button" value="test parent JS" onclick="parent.showJS();" ></div>\
+					<div>new window test<input type="button" value="test parent DOM" onclick="opener.document.getElementById(\'showtext\').innerHTML=\'parent element changed!\'" >\
+					<input type="button" value="test parent JS" onclick="opener.showJS();" ></div>\
+					<div>method binding<input type="button" value="open parent new window" id="bindingmethod" >\
+					<input type="button" value="show iframe" id="binding2"></div>\</div>';
+$(document).ready(function(){	
+	
+	
+});
+function injectWithIframe(html){
+	if (nw) {nw.close()};
+	var iframe = '<iframe src="about:blank" frameborder="0" name="FirebugUI" id="FirebugUI" style="border: 0px; visibility: visible; z-index: 2147483647; position: fixed; width: 100%; left: 0px; bottom: 0px; height: 241px; display: block;"></iframe>';
+	$("#iframediv").append(iframe);
+	var ifs = document.getElementById('FirebugUI').contentWindow.document;
+	$(ifs.body).html(html);
+	$('#bindingmethod', ifs.body).click(this.opennewwithhtml);
+}
+function opennewwithhtml(){
+	openInNewWindow(injectHtml);
+}
+function openInNewWindow(html){
+	$('#iframediv').empty();
+	nw = window.open("about:blank");
+	$(nw.document.body).html(html);	
+	$('#binding2', nw.document.body).click(this.showIframe);
+}
+function showIframe(){
+	injectWithIframe(injectHtml)
+}
+function showJS(){
+	$('#showtext').text('parent JS called!');
+}
+</script>
+</head>
+<body>
+<div>
+<input type="button" value="inject iframe" onclick="javascript:injectWithIframe(injectHtml)" >
+<input type="button" value="inject new window" onclick="javascript:openInNewWindow(injectHtml)" >
+</div>
+<div id="showtext"></div>
+<div id="iframediv"></div>
+</body>
+</html>
