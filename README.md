@@ -1,9 +1,10 @@
 WAS
 ===
+Web Automation element Spy tool dev with chrome plug.
 
-web automation element spy tool dev as chrome plug.
-
-
+TODO
+====
+css、js、网络通信、web后台、文件整理、支持其它浏览器的js版、配置url后台
 
 WAS
 ===
@@ -16,3 +17,13 @@ WAS
 
 安装
 ====
+* 
+
+如何支持其它浏览器
+====
+* 
+
+合作
+====
+如果你有好的建议，或者希望在其它浏览器上开发插件的话；请联系five3@163.com！！
+
