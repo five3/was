@@ -8,16 +8,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	//console.log('Turning ' + tab.url + ' red!');
 	chrome.tabs.executeScript({
 		file: "inject.js"
-		//code:'alert($("#su").val());\
-		//document.body.style.backgroundColor="green";\
-		//alert($("#su").val());\
-		//$("body").append("<div id=injectUI><div class=inject_tip>Please<br/><div><TEXTAREA id=show_attr class=iframe_plug></TEXTAREA></div>");\
-		//alert($("#su").val());\
-		//$("input").click(function(){alert(111)});\
-		//$("img").bind("click", function(){alert(222)});'
+		//code: 'alert("JS Test");'
 	});
 	chrome.tabs.insertCSS({
-		file: "inject_style.css"
+		//file: "inject_style.css"
 	});
 	chrome.tabs.insertImage
 });

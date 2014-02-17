@@ -1,25 +1,26 @@
 ﻿{
 	//必须字段
-	"name": "DDAP@DANGDANG",
-	"version": "0.9",
+	"name": "WAS",
+	"version": "1.0",
 	"manifest_version": 2,
 	//描述字段
-	"description": "Chrome Plug For DDAP。",	
+	"description": "Web Automation element Spy tool.",	
 	"icons": {
-		"128": "logo.png",
+		"128": "icon128.png",
 		"16": "icon16.png"
 	},
 	"web_accessible_resources": [
-					"initial.gif",
 					"operate.gif",
-					"operate_1.gif"
+					"operate_1.gif",
+					"inject.js",
+					"inject.css"
 				    ],
 	//"default_locale": "en",
 	//应用类型，多选一，或者不选：  "browser_action": {...},"page_action": {...},"theme": {...}, "app": {...},
 	"browser_action": {
 		//"default_popup": "popup.html",  //该选项使用后，background脚本中注册的onclick事件将失效
 		"default_icon": "icon16.png",
-		"default_title": "启用对象库插件"		
+		"default_title": "启用WAS插件"		
 	},
 	////*****************************************
 	//// 以下所有都是根据需要提供 
@@ -34,29 +35,12 @@
 	//后台逻辑及事件处理程序，初次加载插件时会被加载
 	"background": { 
 		"scripts": [ "jquery-1.8.0.min.js", "background.js","json2.js"], 
-		"matches": [ "http://*/*", "https://*/*" ],
-		"css": [ "plug_style.css" ]
+		"matches": [ "http://*/*", "https://*/*" ]
 	},
 	//宿主页面要注入资源
 	"content_scripts": [ {
-      "js": [ "jquery-1.8.0.min.js", "content_script.js","json2.js"],
+      "js": [ "jquery-1.8.0.min.js", "json2.js"],
       "matches": [ "http://*/*", "https://*/*" ],
-	  "css": [ "content_style.css" ],
       "run_at": "document_idle"
     }]	
-//	"chrome_url_overrides": {...},
-//	"content_security_policy": "policyString",
-//	"file_browser_handlers": [...],
-//	"homepage_url": "http://path/to/homepage",
-//	"incognito": "spanning" or "split",
-//	"intents": {...}
-//	"key": "publicKey",
-//	"minimum_chrome_version": "versionString",
-//	"nacl_modules": [...],
-//	"offline_enabled": true,
-//	"omnibox": { "keyword": "aString" },
-//	"options_page": "aFile.html",
-//	"plugins": [...],
-//	"requirements": {...},
-//	"update_url": "http://path/to/updateInfo.xml",
 }
