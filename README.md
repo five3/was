@@ -4,7 +4,7 @@ Web Automation element Spy tool dev with chrome plug.
 
 TODO
 ====
-web后台、文件整理、支持其它浏览器的js版
+web后台、文件整理、元素加载、高亮、支持其它浏览器的js版
 
 WAS
 ===
