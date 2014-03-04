@@ -1,10 +1,13 @@
 http://qa.dangdang.com/ddap_platform/project_listProject
+***
 [{"id":119,"create_date":"2013-07-16 17:41:41.0","memo":"测试工程","name":"测试工程","update_date":"2013-07-16 17:41:41.0"}]
 
 http://qa.dangdang.com/ddap_platform/project_getProjectPageWithElements?id=119
+***
 [{"id":117,"name":"testing页面","elements":{"element":[{"element_name":"标签名称保存","element_id":168},{"element_name":"是","element_id":413}]}}]
 
 http://qa.dangdang.com/ddap_platform/element_getPageElement?page_id=117
+***
 [{"id":168,"name":"标签名称保存"},{"id":413,"name":"是"}]
 
 CREATE TABLE `element` (
